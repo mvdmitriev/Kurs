@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Stek\Stek.h"
-
-using namespace std;
+#include "file_ops.h"
 
 
 int main()
@@ -22,7 +21,7 @@ int main()
 		getline(cin, path);
 		try
 		{
-			moniks.download(path);
+			download(path, moniks);
 		}
 		catch (string _wha)
 		{
@@ -276,7 +275,7 @@ int main()
 		getline(cin, path);
 		try
 		{
-			moniks.upload(path);
+			upload(path, moniks);
 		}
 		catch (string _wha)
 		{

@@ -1,7 +1,5 @@
 #pragma once
-#include "..\Monitor\HDMI_monitor\HDMI_monitor.h"
-#include "..\Monitor\TV\Big_TV\Big_TV.h"
-#include "..\Monitor\VGA_monitor\Projector\Projector.h"
+#include "..\Monitor\Monitor.h"
 using namespace std;
 
 class Stack {
@@ -23,8 +21,6 @@ public:
 	bool empty() const;
 	void pop();
 
-	void download(string path);
-	void upload(string path);
 
 	//перегруженные операторы
 	Stack& operator = (const Stack& paren);
@@ -37,6 +33,13 @@ public:
 		}
 		else
 			out << "ѕолка пуста" << endl << endl;
+		return out;
+	}
+
+	friend ofstream& operator << (ofstream& out, const Stack& stek)
+	{
+		if (!stek.empty())
+			stek.top->data->fprint(out);
 		return out;
 	}
 		
