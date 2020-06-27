@@ -137,7 +137,7 @@ int main()
 						}
 						if (chs == 1)
 						{
-							moniks.poisk_first("class VGA_Monitor");
+							moniks.poisk_first("class VGA_monitor");
 						}
 						else if (chs == 2)
 						{
@@ -219,7 +219,7 @@ int main()
 						}
 						if (chs == 1)
 						{
-							moniks.poisk_count("class VGA_Monitor");
+							moniks.poisk_count("class VGA_monitor");
 						}
 						else if (chs == 2)
 						{
