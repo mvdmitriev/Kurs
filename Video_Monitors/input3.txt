@@ -1,0 +1,4 @@
+VGA_monitor 16 1024 768 "Filips sas" 228
+TV 40 1024 768 Filips 200
+HDMI_monitor 60 1366 768 Sasun 200 200
+Big_TV 70 2228 1000 LC 400 1
