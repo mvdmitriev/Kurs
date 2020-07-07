@@ -7,7 +7,6 @@ class Stack {
 	//данные, скрытые от пользователя
 private:
 	struct Node {
-		//Monitor* data;
 		Interface* data;
 		Node* next;
 	};
