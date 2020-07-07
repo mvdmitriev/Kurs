@@ -114,7 +114,7 @@ Monitor::Monitor(int _id, int _width, int _height, char* _name)
 	id = _id;
 	width = _width;
 	height = _height;
-	name = _name;
+	strcpy(name, _name);
 }
 
 bool Monitor::operator== (const Monitor & monik2)
