@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Stek.h"
+#include "..\Monitor\Monitor.h"
 
 
 Stack::Stack()
@@ -17,7 +18,7 @@ Stack::~Stack()
 	top = NULL;
 }
 
-void Stack::push(Monitor* value) {
+void Stack::push(Interface* value) {
 	Node* tmp = new Node;
 	tmp->next = top;
 	top = tmp;
@@ -51,13 +52,13 @@ Stack& Stack::operator = (const Stack& paren)
 
 //методы для обработки стэка
 
-void Stack::poisk_count(Monitor* monik) //поиск по габаритам
+void Stack::poisk_count(Interface* monik) //поиск по габаритам
 {
 	int i = 0;
 	Node* tmp = top;
 	while (tmp)
 	{
-		if (*tmp->data == *monik)
+		if (*dynamic_cast<Monitor*>(tmp->data) == *dynamic_cast<Monitor*>(monik))
 			i++;
 
 		tmp = tmp->next;
@@ -72,7 +73,7 @@ void Stack::poisk_count(int _id)  //поиск по id
 	Node* tmp = top;
 	while (tmp)
 	{
-		if (*tmp->data == _id)
+		if (*dynamic_cast<Monitor*>(tmp->data) == _id)
 			i++;
 
 		tmp = tmp->next;
@@ -96,14 +97,14 @@ void Stack::poisk_count(string namen) //поиск по типу
 	else cout << "Мониторов не найдено" << endl;
 }
 
-void Stack::poisk_first(Monitor* monik)
+void Stack::poisk_first(Interface* monik)
 {
 	int i = 1;
 	Node* tmp = top;
 	bool fl = false;
 	while (tmp && !fl)
 	{
-		if (*tmp->data == *monik)
+		if (*dynamic_cast<Monitor*>(tmp->data) == *dynamic_cast<Monitor*>(monik))
 		{
 			fl = true;
 			break;
@@ -125,7 +126,7 @@ void Stack::poisk_first(int _id)
 	bool fl = false;
 	while (tmp)
 	{
-		if (*tmp->data == _id)
+		if (*dynamic_cast<Monitor*>(tmp->data) == _id)
 		{
 			fl = true;
 			break;
